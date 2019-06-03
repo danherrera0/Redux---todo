@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import { connect } from 'react-redux'
+import TodoList from './components/TodoList.js'
 
-function App() {
+class App extends Component{
+state={
+  input: "",
+}
+  testDispatch=(event)=>{
+    console.log(event)
+    this.props.dispatch({type:'ADD_TODO', text:this.state.input})
+      let input = document.getElementById('inputfield')
+      input.value=""
+  }
+
+  onChange=(event)=>{
+    let input = document.getElementById('inputfield')
+    console.log(event.target.value)
+    event.preventDefault()
+    this.setState({
+      input: event.target.value
+    })
+  }
+
+  render(){
+    console.log(this.state.input)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1> The Daily Do's </h1><hr/><br/>
+      <label> Add To do: </label>
+      <input id="inputfield" onChange={this.onChange} name="input" value={this.state.value} placeholder="Enter todo"></input>
+      <button onClick={(event)=>this.testDispatch(this.state, event)}> ADD TASK</button>
+      <TodoList /><br />
     </div>
   );
 }
 
-export default App;
+}
+
+function mapStateToProps(state){
+    console.log(state)
+    return{
+      todos: state.todos,
+    }
+}
+
+export default connect(mapStateToProps)(App);
