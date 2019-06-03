@@ -30,7 +30,7 @@ state={
       <h1 className="title"> The Daily Do's </h1><br/>
       <div className = "addtododiv">
         <input id="inputfield" onChange={this.onChange} name="input" value={this.state.value} placeholder="Enter todo"></input>
-        <button onClick={(event)=>this.testDispatch(this.state, event)}> Add To-Do</button>
+        <button onClick={(event)=>this.testDispatch(this.state, event)}>Add</button>
       </div>
       <TodoList /><br />
     </div>
