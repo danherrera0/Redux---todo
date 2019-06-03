@@ -28,7 +28,7 @@
   border: solid black thin;
   padding: .5%;
   font-size: 15px;
-
+  box-shadow: 0px 0px 0px white !important;
 }
 
 .addtododiv button{
@@ -37,6 +37,10 @@
   height:35px;
   /* position: relative;
   top:25px; */
+}
+
+.addtododiv :hover{
+  box-shadow: 1px 1px 3px #888888;
 }
 
 .todo-container{
@@ -64,6 +68,10 @@
   height:20px;
   position: relative;
   top:20px;
+}
+
+.todo-item :hover{
+  box-shadow: 1px 1px 3px #888888;
 }
 
 .todo-item h5{
