@@ -13,12 +13,12 @@ class Todo extends React.Component{
 
   render(){
   return(
-    <div>
-    <h3>{this.props.todo.text}</h3>
-    <h6>{this.props.todo.completed? "Done":"In Progress"}</h6>
+    <div className="todo-item">
+    <h4>{this.props.todo.key+1}.</h4>
+    <h4>{this.props.todo.text}</h4>
+    <h5>{this.props.todo.completed? "Done":"In Progress"}</h5>
     <button onClick={(event)=>this.complete_todo(this.props.todo)}>Complete</button>
     <button onClick={(event)=>this.delete_todo(this.props.todo)}>Delete</button>
-
     </div>
 
   )

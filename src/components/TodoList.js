@@ -6,9 +6,9 @@ import { connect } from 'react-redux'
 function TodoList(props){
   console.log(props)
   return(
-    <div>
+    <div className="todo-list">
       {props.todos.map((todo,index)=>(
-         <Todo key={index} todo={todo}/>
+          <Todo key={index} todo={todo}/>
       ))}
     </div>
 
